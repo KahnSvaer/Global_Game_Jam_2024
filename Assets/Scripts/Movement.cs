@@ -36,7 +36,7 @@ public class Movement : MonoBehaviour
     private void LeftRightMovement()
     {
         horizontalInput = Input.GetAxis("Horizontal");
-        float horizontalVelocity =  horizontalInput * Time.deltaTime * horizontalSpeed;
+        float horizontalVelocity =  horizontalInput * horizontalSpeed;
         rb.velocity = new Vector2(horizontalVelocity, rb.velocity.y);
         if(Mathf.Abs(horizontalInput)>0.2f ){
             if (onGround)
