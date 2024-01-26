@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,9 +6,16 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     [SerializeField] float horizontalSpeed = 3000f;
-    [SerializeField] float verticalSpeed = 50f;
+    [SerializeField] float verticalThrust = 150f;
 
     float horizontalInput;
+    public float HorizontalInput{get{return horizontalInput;}}
+
+    bool isVerticalInput;
+    public bool IsVerticalInput{get{return isVerticalInput;}}
+
+    bool onGround;
+    public bool OnGround{get{return onGround;}}
     Rigidbody2D rb;
 
     void Start()
@@ -28,11 +34,21 @@ public class Movement : MonoBehaviour
     {
         horizontalInput = Input.GetAxis("Horizontal");
         float horizontalVelocity =  horizontalInput * Time.deltaTime * horizontalSpeed;
-        rb.velocity = new Vector2(horizontalVelocity ,rb.velocity.y);
+        rb.velocity = new Vector2(horizontalVelocity, rb.velocity.y);
     }
 
     private void Jump()
     {
-        
+        isVerticalInput = Input.GetButtonDown("Jump");
+        if (isVerticalInput && onGround)
+        {
+            float forceY =  verticalThrust;
+            rb.AddForce(new Vector2(0, forceY));
+            onGround = false;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D other) {
+        onGround = true;
     }
 }
