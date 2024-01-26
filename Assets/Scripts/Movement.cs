@@ -27,13 +27,12 @@ public class Movement : MonoBehaviour
     private void LeftRightMovement()
     {
         horizontalInput = Input.GetAxis("Horizontal");
-        Debug.Log(horizontalInput);
         float horizontalVelocity =  horizontalInput * Time.deltaTime * horizontalSpeed;
         rb.velocity = new Vector2(horizontalVelocity ,rb.velocity.y);
     }
 
     private void Jump()
     {
-        throw new NotImplementedException();
+        
     }
 }
