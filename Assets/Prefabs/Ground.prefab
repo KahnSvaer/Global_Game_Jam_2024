@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8806042115357536258}
   - component: {fileID: 7091276939648776840}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Grassy_Top (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2268870096364517629}
   - component: {fileID: 8047769071724880073}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Grassy_Top (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,7 +178,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7021180206348002101}
   - component: {fileID: 1732715080781812519}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -259,7 +259,7 @@ GameObject:
   m_Component:
   - component: {fileID: 305918770275537739}
   - component: {fileID: 7875922076652026524}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Grassy_Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -343,7 +343,7 @@ GameObject:
   m_Component:
   - component: {fileID: 839831416933625535}
   - component: {fileID: 6879855745527112982}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Grassy_Top (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
