@@ -59,17 +59,22 @@ public class DashScript : MonoBehaviour
     [SerializeField] [Range(0.1f, 3f)] float dashTime = 0.3f;
     [SerializeField] bool isDash = true;
     [SerializeField] Animator anime;
+    private bool unlockedDash;
 
     Rigidbody2D rb;
 
     private void Start()
     {
         rb = GetComponentInParent<Rigidbody2D>();
+        
     }
 
     private void Update()
     {
-        ProcessDash();
+        unlockedDash = GetComponentInParent<Movement>().unlockDash;
+        if(unlockedDash){
+            ProcessDash();
+        }
         if (GetComponentInParent<Movement>().OnGround)
         {
             isDash = true;

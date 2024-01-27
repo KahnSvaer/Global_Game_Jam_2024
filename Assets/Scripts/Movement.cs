@@ -14,6 +14,8 @@ public class Movement : MonoBehaviour
     float horizontalInput;
 
     bool isVerticalInput;
+    bool unlockedDash;
+    public bool unlockDash{get{return unlockedDash;}}
     
 
     [SerializeField]bool onGround;
@@ -62,7 +64,7 @@ public class Movement : MonoBehaviour
     }
 
     void GroundCheck(){
-        if(Physics2D.Raycast(groundCheck.position,Vector2.down,0.1f,groundLayer)){
+        if(Physics2D.OverlapCircle(groundCheck.position,0.2f,groundLayer)){  //Physics2D.Raycast(groundCheck.position,Vector2.down,0.1f,groundLayer 
             onGround = true;
         }else{
             onGround = false;
@@ -77,7 +79,8 @@ public class Movement : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D target){
         if(target.tag == "torso"){
-            Debug.Log("0");
+            print("gay");
+            unlockedDash = true;
         }
         
     }

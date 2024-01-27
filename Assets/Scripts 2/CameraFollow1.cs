@@ -14,6 +14,8 @@ public class CameraFollow : MonoBehaviour
     public float offsetZ;
     public Vector3 currentVelocity;
     public Vector3 lastTargetPosition;
+
+    public Vector3 respawnPosition;
     
 
     void Awake()
@@ -52,6 +54,26 @@ public class CameraFollow : MonoBehaviour
             //     Debug.Log("Gay");
             // }
         }
+        if (IsPlayerOutOfBounds())
+        {
+            RespawnPlayer();
+        }
+    }
+    bool IsPlayerOutOfBounds()
+    {
+        // Check if the player's position is below the lower end of the camera bounds
+        return target.position.y < cameraBounds.min.y;
+    }
+
+    void RespawnPlayer()
+    {
+        // Set the player's position to the respawn position
+        target.position = respawnPosition;
+        
+        // You might want to perform additional actions here, such as resetting player stats or applying respawn effects.
+
+        // Move the camera back to its original position (assuming the camera is a child of another GameObject)
+        Camera.main.transform.position = Vector3.zero;
     }
 }
 
