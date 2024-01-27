@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3510027547492737966}
   - component: {fileID: 7612464617651444555}
   - component: {fileID: -433518829452755440}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: big-floating-rock
   m_TagString: Untagged
   m_Icon: {fileID: 0}

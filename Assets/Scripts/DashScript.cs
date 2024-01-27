@@ -8,8 +8,11 @@ public class DashScript : MonoBehaviour
 {
     [SerializeField] float forceConstant = 10;
     [SerializeField] [Range(0.1f,3f)] float dashTime = 0.3f;
-    [SerializeField] [Range(0f,100f)] int RechargeTime = 10; 
+    // [SerializeField] [Range(0f,100f)] int RechargeTime = 10; 
     [SerializeField] bool isDash = true;
+
+    [SerializeField] Animator anime;
+
     Rigidbody2D rb;
     private void Start() {
         rb = GetComponentInParent<Rigidbody2D>();
@@ -17,6 +20,10 @@ public class DashScript : MonoBehaviour
 
     private void Update() {
         ProcessDash();
+        if(GetComponentInParent<Movement>().OnGround)
+        {
+            isDash = true;
+        }
     }
 
     private void ProcessDash()
@@ -32,13 +39,14 @@ public class DashScript : MonoBehaviour
         Vector2 velocityDirection = rb.velocity.normalized;
         rb.velocity = forceConstant * velocityDirection;
         Debug.Log(velocityDirection.magnitude);
-        isDash = false;
         GetComponentInParent<Movement>().enabled = false;
+        isDash = false;
+        anime.Play("Idle");
         rb.gravityScale = 0;
         yield return new WaitForSeconds(dashTime);
         GetComponentInParent<Movement>().enabled = true;
         rb.gravityScale = 1;
-        yield return new WaitForSeconds(RechargeTime);
-        isDash = true;
+        // yield return new WaitForSeconds(RechargeTime);
+        // isDash = true;
     }
 }

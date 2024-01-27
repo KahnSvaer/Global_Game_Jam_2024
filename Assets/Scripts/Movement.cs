@@ -16,7 +16,7 @@ public class Movement : MonoBehaviour
     bool isVerticalInput;
     
 
-    bool onGround;
+    [SerializeField]bool onGround;
     public bool OnGround{get{return onGround;}}
     Rigidbody2D rb;
 
@@ -58,7 +58,6 @@ public class Movement : MonoBehaviour
         {
             float forceY =  verticalThrust;
             rb.AddForce(new Vector2(0, forceY));
-            
         }
     }
 

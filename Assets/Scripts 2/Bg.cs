@@ -5,7 +5,7 @@ using UnityEngine.UIElements;
 
 public class Bg : MonoBehaviour
 {
-    public float lenght , startPos;
+    private float lenght , startPos;
     public GameObject cam;
     public float parallaxEffect;
 
@@ -16,8 +16,8 @@ public class Bg : MonoBehaviour
     }
     void FixedUpdate()
     {
-        float dist = cam.transform.position.x * parallaxEffect;
-        transform.position = new Vector3(startPos+dist , transform.position.y,transform.position.z); 
+        float dist = (cam.transform.position.x * parallaxEffect);
+        transform.position = new Vector3(startPos + dist , transform.position.y,transform.position.z); 
     }
 
 }
