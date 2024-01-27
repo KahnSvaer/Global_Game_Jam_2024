@@ -17,7 +17,11 @@ public class Bg : MonoBehaviour
     void FixedUpdate()
     {
         float dist = (cam.transform.position.x * parallaxEffect);
+        float temp = cam.transform.position.x*(1-parallaxEffect);
+
         transform.position = new Vector3(startPos + dist , transform.position.y,transform.position.z); 
+        if(temp>startPos+lenght) startPos+=lenght;
+        else if (temp<startPos +lenght) startPos-=lenght;
     }
 
 }
