@@ -974,10 +974,10 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1.69
+  m_Mass: 2
+  m_LinearDrag: 1
+  m_AngularDrag: 0.25
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -1048,7 +1048,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 536034909}
   horizontalSpeed: 5
-  verticalThrust: 369
+  verticalThrust: 669
   groundCheck: {fileID: 918259683}
   groundLayer:
     serializedVersion: 2
@@ -1815,7 +1815,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d66e79c1048a28409f8cbd7fa243d0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forceConstant: 8
+  forceConstant: 10
   dashTime: 0.3
   isDash: 1
   anime: {fileID: 536034909}
